@@ -4,8 +4,8 @@ class Fighter{
 	int y = 0;
 	int type;
 	int speed = 5;
-
 	int hp;
+
 	Fighter(int hp) {
 		this.fighterImg = loadImage("img/fighter.png");
 		this.x = width - this.fighterImg.width;
@@ -31,10 +31,9 @@ class Fighter{
 		}
 	}
 
-	void shoot() {
-		
+	void shoot(int shooting) {
+		bullets[shooting] = new Bullet(this.x, this.y); 
 	}
-
 	void move(int direct) {
 		switch (direct) {
 			case Direction.UP:
